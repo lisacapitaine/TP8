@@ -23,7 +23,14 @@ public class ChampollionJUnitTest {
             untel.ajouteEnseignement(java, 0, 1, 0);
             assertEquals(2, untel.heuresPrevues(),"L'enseignant doit réaliser 2h" );
         }
-        
+
+	   @Test
+        public void testHeuresPlanifiees(){
+            Salle s = new Salle ("Salle 1", 25);
+            Intervention e = new Intervention (s, uml, untel, new Date(), 2, TypeIntervention.TD);
+            untel.ajouteInterventions(e);
+            assertEquals(2, untel.heuresPlanifiees(), "L'enseignant doit réaliser 2h");
+        }
        
 
         @Test 
